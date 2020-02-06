@@ -11,10 +11,18 @@ Dogsitter.destroy_all
 Stroll.destroy_all
 City.destroy_all
 
-City.create(name:"Nantes")
+10.times do
+City.create(name:Faker::Address.city)
+end
 
-Dog.create(name:"Rex", city_id: City.first.id)
+45.times do
+Dog.create(name:Faker::Creature::Dog.name, city_id: City.find(rand(City.first.id..City.last.id)).id)
+end
 
-Dogsitter.create(first_name:"Jean-Michel", last_name:"Promeneur", city_id: City.first.id)
+20.times do
+Dogsitter.create(first_name:Faker::Name.first_name, last_name:Faker::Name.last_name, city_id: City.find(rand(City.first.id..City.last.id)).id)
+end
 
-Stroll.create(dogsitter_id: Dogsitter.first.id, dog_id: Dog.first.id)
+140.times do
+Stroll.create(dogsitter_id: Dogsitter.find(rand(Dogsitter.first.id..Dogsitter.last.id)).id, dog_id: Dog.find(rand(Dog.first.id..Dog.last.id)).id)
+end
