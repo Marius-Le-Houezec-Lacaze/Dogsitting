@@ -7,7 +7,7 @@ L'appli pour garder votre ami à poil, oui on parle bien de votre chien.
 ### Configuration
 Entrez les commandes suivantes dans votre terminal préféré :
 
-`git clone git@github.com:luca-montaigut/Freedoc.git`
+`git clone git@github.com:luca-montaigut/Dogsitting.git`
 
 `cd FreeDoc`
 
